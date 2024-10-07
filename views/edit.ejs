@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khaatabook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-zinc-100">
+    <nav class="w-full py-4 px-6 flex items-center justify-between font-medium ">
+        <h2>Khaatabook</h2>
+        <div class="flex gap-5 items-center">
+            <a href="/">Home</a>
+            <a href="/createhisab">Create New Hisaab</a>
+        </div>
+    </nav>
+    <section class="p-6 flex flex-col gap-5">
+        <h1 class="font-bold text-2xl text-blue-600 tracking-tight">Edit Hisaab ... 
+        </h1>
+        <form action="/update/<%= fileName %>" method="post" class="flex flex-col gap-6">
+            <div>
+
+                
+                <h4 class="text-2xl font-medium mb-5 mt-10 tracking-tight"> You are editing <span class="text-blue-600"> <%= fileName.split(".")[0] %> </span></h4>
+            </div>
+            <textarea class="w-1/2 bg-zinc-200 h-32 p-2  rounded-md" placeholder="Write Something ..." name="newContent" id=""><%= fileData %></textarea>
+            <input type="submit" class="w-fit px-4 py-2 bg-blue-500 text-white font-bold rounded-md">
+        </form>
+    </section>
+
+
+</body>
+
+</html>
